@@ -1,13 +1,315 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --highlight-color: #70ff03;
+  --placeholder-color: #000000c0;
+  --boxShadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.542);
+  --disabled-Bg-color: #bec1c5;
+  --disabled-fontColor: #e7ebf0;
+  --hover-color: rgba(255, 255, 255, 0.478);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: textFont;
+  src: url(../public/assets/OpenSans-Light.ttf);
+}
+@font-face {
+  font-family: titleFont;
+  src: url(../public/assets/OpenSans-SemiBold.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 1rem 0;
+  height: auto;
+
+  background: conic-gradient(
+    from 210deg,
+    rgb(197, 187, 184) 0deg,
+    rgb(197, 187, 184) 24deg,
+    rgb(184, 181, 184) 24deg,
+    rgb(184, 181, 184) 48deg,
+    rgb(169, 175, 183) 48deg,
+    rgb(169, 175, 183) 72deg,
+    rgb(154, 168, 181) 72deg,
+    rgb(154, 168, 181) 96deg,
+    rgb(139, 161, 179) 96deg,
+    rgb(139, 161, 179) 120deg,
+    rgb(125, 152, 175) 120deg,
+    rgb(125, 152, 175) 144deg,
+    rgb(112, 144, 171) 144deg,
+    rgb(112, 144, 171) 168deg,
+    rgb(101, 135, 166) 168deg,
+    rgb(101, 135, 166) 192deg,
+    rgb(92, 126, 161) 192deg,
+    rgb(92, 126, 161) 216deg,
+    rgb(85, 117, 155) 216deg,
+    rgb(85, 117, 155) 240deg,
+    rgb(81, 108, 148) 240deg,
+    rgb(81, 108, 148) 264deg,
+    rgb(79, 99, 141) 264deg,
+    rgb(79, 99, 141) 288deg,
+    rgb(80, 90, 133) 288deg,
+    rgb(80, 90, 133) 312deg,
+    rgb(84, 83, 125) 312deg,
+    rgb(84, 83, 125) 336deg,
+    rgb(91, 75, 116) 336deg,
+    rgb(91, 75, 116) 360deg
+  );
+}
+
+/* html {
+  font-size: 65.5%;
+} */
+
+input {
+  border: none;
+  outline: none;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.8rem 1rem;
+  border-radius: 4px;
+  font-family: textFont;
+  font-weight: 700;
+}
+input::placeholder {
+  color: var(--placeholder-color);
+}
+button {
+  all: unset;
+  font-weight: 700;
+  font-family: sans-serif;
+  font-size: 1rem;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+button:hover {
+  background-color: var(--hover-color);
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+  box-shadow: var(--boxShadow);
+
+  background: rgba(255, 255, 255, 0.326);
+  border-radius: 16px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.top-head {
+  font-family: titleFont;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.top-head-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0 20px;
+}
+
+.content {
+  padding: 0.5rem;
+  margin-top: 3rem;
+}
+.head {
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-title {
+  width: 17%;
+  font-size: 1.3rem;
+}
+
+.taskDetails {
+  width: 68%;
+  border: none;
+  outline: none;
+  padding: 0.5rem 1.5rem;
+  font-family: textFont;
+  font-size: 1.1rem;
+  font-weight: 700;
+  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent */
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.taskDetails::placeholder {
+  color: var(--placeholder-color);
+}
+.disabled-btn {
+  background-color: var(--disabled-Bg-color) !important;
+  color: var(--disabled-fontColor) !important;
+}
+.top-head-left button {
+  padding: 0.8rem;
+}
+.taskList {
+  height: 370px;
+  box-shadow: var(--boxShadow);
+  margin-top: 3rem;
+  padding: 1rem 0.5rem;
+  border-radius: 4px;
+
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap-reverse;
+  overflow-y: scroll;
+  gap: 15px;
+}
+
+.task {
+  width: 100%;
+  box-shadow: var(--boxShadow);
+  padding: 1.5rem;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.892);
+}
+
+.task h3 {
+  font-family: titleFont;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+.task p {
+  font-family: textFont;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 1px;
+  margin-top: 0.9rem;
+}
+
+.task-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.task-close-btn:hover {
+  transform: rotate(180deg);
+}
+.empty-post-msg {
+  font-family: textFont;
+  font-size: 1.3rem;
+  margin: 8rem auto;
+}
+.empty-post-msg span {
+  font-size: 2rem;
+}
+.highlight {
+  color: var(--highlight-color);
+}
+
+/*Responsive section*/
+
+@media screen and (max-width: 768px) {
+  body {
+    height: auto;
+    padding: 0rem;
+  }
+
+  .container {
+    padding: 2rem 0.5rem 0 0.5rem;
+    border-radius: 0;
+  }
+
+  .top-head {
+    text-align: center;
+    flex-direction: column;
+    padding: 0;
+    font-size: 1.5rem;
+    gap: 70px 0;
+  }
+  .top-head-left {
+    justify-content: space-between;
+    gap: 10px 0;
+  }
+  .head {
+    padding: 0.5rem 0;
+    flex-direction: column;
+    gap: 7px 0;
+  }
+  .taskDetails {
+    width: 100%;
+  }
+  .content {
+    padding: 0rem;
+    margin-top: 1rem;
+  }
+  .head input {
+    width: 100%;
+  }
+  button {
+    padding: 1rem 0;
+    text-align: center !important;
+    font-size: 1.3rem !important;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .top-head {
+    gap: 20px 0;
+    font-size: 1.5rem;
+  }
+  .top-head-left {
+    /* border: 2px solid blue; */
+    flex-direction: column;
+    gap: 10px 0;
+    margin-top: 2rem;
+  }
+
+  .taskList {
+    margin-top: 2rem;
+    padding: 0.5rem;
+    width: 100%;
+    gap: 10px;
+  }
+  .task {
+    padding: 0.5rem;
+  }
+  .task h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+  }
+
+  .task p {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 25px;
+    margin-top: 1rem;
+  }
+
+  button {
+    width: 100% !important;
+    padding: 0.5rem 0 !important;
+    font-size: 1.3rem !important;
+  }
+  input {
+    width: 100% !important;
+  }
 }
