@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/notepad-react-app/static/css/main.f7bccd25.css",
+    "main.js": "/notepad-react-app/static/js/main.a8061ab8.js",
+    "static/media/OpenSans-Light.ttf": "/notepad-react-app/static/media/OpenSans-Light.1c2fe8db2df1ef1d0305.ttf",
+    "static/media/OpenSans-SemiBold.ttf": "/notepad-react-app/static/media/OpenSans-SemiBold.368e59177008be64abda.ttf",
+    "index.html": "/notepad-react-app/index.html",
+    "main.f7bccd25.css.map": "/notepad-react-app/static/css/main.f7bccd25.css.map",
+    "main.a8061ab8.js.map": "/notepad-react-app/static/js/main.a8061ab8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f7bccd25.css",
+    "static/js/main.a8061ab8.js"
+  ]
+}
