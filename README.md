@@ -1,6 +1,6 @@
-# 📒 Notepad (To-Do List) React App
+# 📒 To-Do List React App
 
-A stylish and interactive notepad/to-do list application built with **React**. Add, search, and delete notes with a clean, responsive UI.
+A stylish and interactive to-do list application built with **React**. Add, search, and delete task with a clean, responsive UI.
 
 ---
 
