@@ -16,7 +16,7 @@ A stylish and interactive notepad/to-do list application built with **React**. A
 
 ## 🌐 Live Demo
 
-👉 [Live Preview](https://your-username.github.io/notepad-react-app/)
+👉 [Live Preview](https://Aymaq-code.github.io/notepad-app/)
 
 ---
 
